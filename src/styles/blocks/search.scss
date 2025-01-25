@@ -1,0 +1,40 @@
+.github-search {
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 24px 24px;
+  background-color: #191c29;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  &__input {
+    border-radius: 2px;
+    min-width: 498px;
+    color: #191c29;
+    background-color: #ffffff;
+  }
+  &__autocomplete-list-item {
+    font-size: 30px;
+    border: 2px solid #191c29;
+    min-width: 502px;
+    color: #191c29;
+    background-color: #ffffff;
+  }
+  &__repo-list {
+    min-width: 500px;
+    margin-top: 20px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      padding: 0 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

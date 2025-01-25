@@ -1,0 +1,7 @@
+@use './vars.scss' as *;
+
+body {
+  min-height: 100vh;
+  background-color: $main-bg--color;
+  color: $main-text--color;
+}

@@ -1,0 +1,10 @@
+node_modules/
+build/
+.vscode/
+.prettierignore
+.prettierrc.json
+eslint.config.mjs
+package-lock.json
+.editorconfig
+package.json
+webpack.config.js

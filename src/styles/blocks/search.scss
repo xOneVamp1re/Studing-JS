@@ -24,6 +24,9 @@
     min-width: 502px;
     color: #191c29;
     background-color: #ffffff;
+    &:hover {
+      background-color: #4682b4;
+    }
   }
   &__repo-list {
     min-width: 500px;

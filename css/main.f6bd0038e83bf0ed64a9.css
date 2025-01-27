@@ -143,6 +143,9 @@ body {
   color: #191c29;
   background-color: #ffffff;
 }
+.github-search__autocomplete-list-item:hover {
+  background-color: #4682b4;
+}
 .github-search__repo-list {
   min-width: 500px;
   margin-top: 20px;
@@ -164,4 +167,4 @@ body {
   justify-content: center;
 }
 
-/*# sourceMappingURL=main.83edb8bbb2faf1b28584.css.map*/
+/*# sourceMappingURL=main.f6bd0038e83bf0ed64a9.css.map*/

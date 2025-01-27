@@ -26,7 +26,7 @@ function showError({
   errorMessage.className = 'error-message';
   errorMessage.textContent = message;
   errorMessage.style.margin = '20px 0';
-  errorList.appendChild(errorMessage);
+  errorList.append(errorMessage);
   setTimeout(() => {
     errorMessage.remove();
   }, 5000);
@@ -63,11 +63,9 @@ const createRepoInfo = (item, {
   const starsEl = document.createElement('div');
   starsEl.classList.add('github-search__repo-list-item-stars');
   starsEl.textContent = `Stars: ${stars}`;
-  fragment.appendChild(nameEl);
-  fragment.appendChild(ownerEl);
-  fragment.appendChild(starsEl);
-  info.appendChild(fragment);
-  item.appendChild(info);
+  info.append(nameEl, ownerEl, starsEl);
+  fragment.append(info);
+  item.append(fragment);
 };
 const createRepoBtn = (item, {
   id
@@ -98,14 +96,13 @@ const createRepoBtn = (item, {
   line2.style.left = '50%';
   line2.style.transform = 'translateX(-50%) rotate(-45deg)';
   line2.style.pointerEvents = 'none';
-  button.appendChild(line1);
-  button.appendChild(line2);
-  button.setAttribute('repo-id', id);
+  button.append(line1, line2);
+  button.setAttribute('data-id', id);
   button.addEventListener('click', e => {
-    const repoId = e.target.getAttribute('repo-id');
+    const repoId = e.target.getAttribute('data-id');
     removeRepo(repoId);
   });
-  item.appendChild(button);
+  item.append(button);
 };
 const selectRepo = repo => {
   selectedRepos.push(repo);
@@ -123,9 +120,9 @@ function updateRepoList() {
     createRepoBtn(item, repo);
     item.style.border = '1px solid #212534';
     item.style.backgroundColor = '#373a48';
-    fragment.appendChild(item);
+    fragment.append(item);
   });
-  repoList.appendChild(fragment);
+  repoList.append(fragment);
 }
 function removeRepo(repoId) {
   const id = parseInt(repoId);
@@ -138,18 +135,18 @@ const createAutoCompleteList = repos => {
     const noResults = document.createElement('div');
     noResults.textContent = 'Нет результатов';
     noResults.style.margin = '20px 0';
-    autocompleteList.appendChild(noResults);
+    autocompleteList.append(noResults);
     return;
   }
   const fragment = document.createDocumentFragment();
   repos.forEach(repo => {
-    const item = document.createElement('div');
+    const item = document.createElement('li');
     item.classList.add('github-search__autocomplete-list-item');
     item.textContent = repo.name;
     item.onclick = () => selectRepo(repo);
-    fragment.appendChild(item);
+    fragment.append(item);
   });
-  autocompleteList.appendChild(fragment);
+  autocompleteList.append(fragment);
 };
 input.addEventListener('input', debounce(async () => {
   const text = input.value.trim();
@@ -309,4 +306,4 @@ __webpack_require__.r(__webpack_exports__);
 
 /******/ })()
 ;
-//# sourceMappingURL=main.50ce6c51c8b9b915e479.js.map
+//# sourceMappingURL=main.1311b6c626d730f18f2b.js.map
